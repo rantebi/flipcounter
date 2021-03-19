@@ -1,0 +1,71 @@
+#flip-counter
+    display: flex
+
+
+.digit-container
+    font-size: 140px
+    color: white
+    margin: 0 5px
+    flex-direction: column
+    display: flex
+    perspective: 200px
+
+
+.digit-container>div
+    padding: 0 5px
+    border-radius: 10px 10px 0 0  
+
+.upper,
+.lower
+    height: 50%
+    overflow: hidden
+
+.upper
+    order: 1
+    background: #0c0
+
+.closing
+    order: 2
+    position: absolute
+    height: 50%
+    overflow: hidden
+    background: #0b0
+    animation-name: flip-closing
+    animation-duration: .35s
+    animation-timing-function: ease-in
+    transform-style: preserve-3d
+    transform-origin: 50% 100%
+
+.openning
+    order: 3  
+    position: absolute
+    height: 50%
+    overflow: hidden
+    background: #0a0
+    animation-name: flip-openning
+    animation-duration: .35s
+    animation-timing-function: ease-out
+    transform-style: preserve-3d
+    transform-origin: 50% 100%
+
+.openning .digit
+    transform: scaleY(-1)
+
+.lower
+    // min-height: 70px
+    line-height: 0px
+    order: 4
+    background: #090
+    border-radius: 0 0 10px 10px!important
+
+@keyframes flip-closing
+    from
+        transform: rotateX(0)
+    to
+        transform: rotateX(-90deg)
+
+@keyframes flip-openning
+    from
+        transform: rotateX(-90deg)
+    to
+        transform: rotateX(-180deg)
