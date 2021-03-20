@@ -3,11 +3,11 @@
         <div 
         #firstUpper
         [class]="upperClasses">
-            <div class="digit">0</div>
+            <div class="digit">{{ digit$ | async}}</div>
         </div>
         <div 
         #firstLower
         class="lower">
-            <div class="digit">0</div>
+            <div class="digit">{{ oldDigit }}</div>
         </div>
   </div>
